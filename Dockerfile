@@ -8,4 +8,5 @@ WORKDIR /microservice/service
 RUN chmod +x ./compile.sh
 RUN ./compile.sh
 WORKDIR /microservice
-RUN jolie embed.ol
+
+CMD ["jolie", "embed.ol"]

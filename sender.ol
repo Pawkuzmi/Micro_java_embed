@@ -2,12 +2,12 @@ include "MyReceiveInterface.ol"
 
 outputPort B {
 	Interfaces: MyReceiveInterface
-	Location: "socket://localhost:8000"
+	Location: "socket://localhost:8001"
 	Protocol: sodep
 }
 
 
 main{
-	wait@B("String splited by java service")
+	wait@B("String from sender splited by java service")
 
 }

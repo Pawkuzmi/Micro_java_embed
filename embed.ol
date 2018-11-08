@@ -1,4 +1,5 @@
 include "MyConsoleInterface.ol"
+include "MyReceiveInterface.ol"
 include "console.iol"
 
 outputPort MyService {
@@ -7,14 +8,24 @@ outputPort MyService {
 	Interfaces: MyConsoleInterface
 }
 
+inputPort ReceivePort {
+   	Location: "socket://localhost:8001"
+	Protocol: sodep
+	Interfaces: MyReceiveInterface
+}
+
 
 embedded {
     Java: "MyService" in MyService
 }
 
 main
-{		
-    split@MyService("Text splited by java service")
+{
+	println@Console("Waiting...")();
+	[wait(text)]
+	{
+		split@MyService(text)	
+	}
 
 
 
