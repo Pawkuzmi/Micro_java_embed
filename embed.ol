@@ -3,13 +3,13 @@ include "MyReceiveInterface.ol"
 include "console.iol"
 
 outputPort MyService {
-   	Location: "socket://localhost:80"
+   	Location: "socket://localhost:8000"
 	Protocol: sodep
 	Interfaces: MyConsoleInterface
 }
 
 inputPort ReceivePort {
-   	Location: "socket://localhost:8001"
+   	Location: "socket://localhost:80"
 	Protocol: sodep
 	Interfaces: MyReceiveInterface
 }

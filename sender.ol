@@ -2,7 +2,7 @@ include "MyReceiveInterface.ol"
 
 outputPort B {
 	Interfaces: MyReceiveInterface
-	Location: "socket://localhost:8001"
+	Location: "socket://localhost:80"
 	Protocol: sodep
 }
 
